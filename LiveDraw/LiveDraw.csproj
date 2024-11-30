@@ -3,7 +3,7 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <PublishReadyToRun>false</PublishReadyToRun>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Antfu7.LiveDraw</RootNamespace>
+    <RootNamespace>Sweeney.LiveDraw</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>

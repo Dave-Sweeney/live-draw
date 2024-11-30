@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LiveDraw"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:LiveDraw="clr-namespace:AntFu7.LiveDraw"
+             xmlns:LiveDraw="clr-namespace:Sweeney.LiveDraw"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

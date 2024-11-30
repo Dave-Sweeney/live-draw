@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace AntFu7.LiveDraw
+namespace Sweeney.LiveDraw
 {
     class CornerRadiusAnimation : AnimationTimeline
     {

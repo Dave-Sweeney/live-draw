@@ -1,4 +1,4 @@
-﻿namespace AntFu7.LiveDraw.Properties
+﻿namespace Sweeney.LiveDraw.Properties
 {
 
 

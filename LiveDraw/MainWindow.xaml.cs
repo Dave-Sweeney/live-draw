@@ -17,7 +17,7 @@ using System.Windows.Threading;
 using Brush = System.Windows.Media.Brush;
 using Point = System.Windows.Point;
 
-namespace AntFu7.LiveDraw
+namespace Sweeney.LiveDraw
 {
 
 
