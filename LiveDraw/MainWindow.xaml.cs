@@ -40,29 +40,6 @@ namespace Sweeney.LiveDraw
         private static readonly Duration Duration7 = (Duration)Application.Current.Resources["Duration7"];
         private static readonly Duration Duration10 = (Duration)Application.Current.Resources["Duration10"];
 
-        /*#region Mouse Throught
-
-        private const int WsExTransparent = 0x20;
-        private const int GwlExstyle = (-20);
-
-        [DllImport("user32", EntryPoint = "SetWindowLong")]
-        private static extern uint SetWindowLong(IntPtr hwnd, int nIndex, uint dwNewLong);
-
-        [DllImport("user32", EntryPoint = "GetWindowLong")]
-        private static extern uint GetWindowLong(IntPtr hwnd, int nIndex);
-
-        private void SetThrought(bool t)
-        {
-            var hwnd = new WindowInteropHelper(this).Handle;
-            var extendedStyle = GetWindowLong(hwnd, GwlExstyle);
-            if (t)
-                SetWindowLong(hwnd, GwlExstyle, extendedStyle | WsExTransparent);
-            else
-                SetWindowLong(hwnd, GwlExstyle, extendedStyle & ~(uint)WsExTransparent);
-        }
-
-
-        #endregion*/
 
         #region /---------Lifetime---------/
 
@@ -153,20 +130,12 @@ namespace Sweeney.LiveDraw
             if (v)
             {
                 DetailTogglerRotate.BeginAnimation(RotateTransform.AngleProperty, new DoubleAnimation(180, Duration5));
-                //DefaultColorPicker.Size = ColorPickerButtonSize.Middle;
                 DetailPanel.BeginAnimation(OpacityProperty, new DoubleAnimation(0, 1, Duration4));
-                //PaletteGrip.BeginAnimation(WidthProperty, new DoubleAnimation(130, Duration3));
-                //MinimizeButton.BeginAnimation(OpacityProperty, new DoubleAnimation(0, 1, Duration3));
-                //MinimizeButton.BeginAnimation(HeightProperty, new DoubleAnimation(0, 25, Duration3));
             }
             else
             {
                 DetailTogglerRotate.BeginAnimation(RotateTransform.AngleProperty, new DoubleAnimation(0, Duration5));
-                //DefaultColorPicker.Size = ColorPickerButtonSize.Small;
                 DetailPanel.BeginAnimation(OpacityProperty, new DoubleAnimation(1, 0, Duration4));
-                //PaletteGrip.BeginAnimation(WidthProperty, new DoubleAnimation(80, Duration3));
-                //MinimizeButton.BeginAnimation(OpacityProperty, new DoubleAnimation(1, 0, Duration3));
-                //MinimizeButton.BeginAnimation(HeightProperty, new DoubleAnimation(25, 0, Duration3));
             }
             _displayDetailPanel = v;
         }
@@ -185,7 +154,6 @@ namespace Sweeney.LiveDraw
             _enable = b;
             MainInkCanvas.UseCustomCursor = false;
 
-            //SetTopMost(false);
             if (_enable == true)
             {
                 LineButton.IsActived = false;
@@ -250,10 +218,6 @@ namespace Sweeney.LiveDraw
         {
             PaletteRotate.BeginAnimation(RotateTransform.AngleProperty, new DoubleAnimation(v ? -90 : 0, Duration4));
             Palette.BeginAnimation(MinWidthProperty, new DoubleAnimation(v ? 90 : 0, Duration7));
-            //PaletteGrip.BeginAnimation(WidthProperty, new DoubleAnimation((double)Application.Current.Resources[v ? "VerticalModeGrip" : "HorizontalModeGrip"], Duration3));
-            //BasicButtonPanel.BeginAnimation(WidthProperty, new DoubleAnimation((double)Application.Current.Resources[v ? "VerticalModeFlowPanel" : "HorizontalModeFlowPanel"], Duration3));
-            //PaletteFlowPanel.BeginAnimation(WidthProperty, new DoubleAnimation((double)Application.Current.Resources[v ? "VerticalModeFlowPanel" : "HorizontalModeFlowPanel"], Duration3));
-            //ColorPickersPanel.BeginAnimation(WidthProperty, new DoubleAnimation((double)Application.Current.Resources[v ? "VerticalModeColorPickersPanel" : "HorizontalModeColorPickersPanel"], Duration3));
             _displayOrientation = v;
         }
         private void SetTopMost(bool v)
@@ -833,21 +797,6 @@ namespace Sweeney.LiveDraw
                     LineMode(true);
                     break;
 
-                /*
-                case Key.D:
-                    if (EraseByPoint_Flag is ((int)erase_mode.NONE) or ((int)erase_mode.ERASER))
-                    {
-                        SetStaticInfo("Eraser Mode (Point)");
-                        MainInkCanvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
-                        EraseByPoint_Flag = (int)erase_mode.ERASERBYPOINT;
-                    }
-                    else if (EraseByPoint_Flag == (int)erase_mode.ERASERBYPOINT)
-                    {
-                        MainInkCanvas.EditingMode = InkCanvasEditingMode.Ink;
-                        EraseByPoint_Flag = (int)erase_mode.NONE;
-                    }
-                    break;
-                */
                 case Key.Add:
                     _brushIndex++;
                     if (_brushIndex > _brushSizes.Count() - 1)
